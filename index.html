@@ -27,6 +27,8 @@
 
 
       <h2>Café avec vue</h2>
+
+      <p>copyRight : {{ copyRight }}</p>
     </div>
 
     <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
@@ -48,6 +50,10 @@
         computed: {
           toatalAmont(){
             return this.costOfApples + this.costOfBananas + this.costOfCoconuts
+          },
+
+          copyRight(){
+            return 'Tous droit réservés 2024'
           }
         }
       });
