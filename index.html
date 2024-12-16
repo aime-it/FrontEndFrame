@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <title>Mon Application Vue.js</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1>Ma première application Vue.js !</h1>
+
+      <p>J'ai hâte de créer des applications incroyables !</p>
+      <span>Nom du restaurent : {{ restaurentName }}</span>
+
+      <h2>Panier d'achat</h2>
+      <ul>
+        <li>Pommes : {{ costOfApples }}</li>
+        <li>Bananes : {{ costOfBananas }}</li>
+        <li>Noix de coco : {{ costOfCoconuts }}</li>
+      </ul>
+      <span>Total: </span><strong>{{ toatalAmont }}</strong>
+
+      <h3>Contact</h3>
+      <ul>
+        <li>Numéro de téléphone: <strong>(+229) {{ phoneNumber }}</strong></li>
+        <li>Adresse mail: <strong>{{ emailAdresse }}</strong></li>
+        <li>Boite postale: <strong>{{ postalBox }}</strong></li>
+      </ul>
+
+
+      <h2>Café avec vue</h2>
+    </div>
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.min.js"></script>
+    <script>
+      const app = new Vue({
+        el: "#app",
+        data: {
+          restaurentName: "Festival des Glaces",
+
+          costOfApples: 6,
+          costOfBananas: 4,
+          costOfCoconuts: 10,
+
+          phoneNumber: '0197955206',
+          emailAdresse: 'a.tossou@lecompetentdigital',
+          postalBox: '03BP1230'
+        },
+        computed: {
+          toatalAmont(){
+            return this.costOfApples + this.costOfBananas + this.costOfCoconuts
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
